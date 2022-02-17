@@ -268,7 +268,7 @@ static void target_mmc_sdhci_init()
 	
 	sd_config.bus_width     = DATA_BUS_WIDTH_4BIT;
 	sd_config.slot          = 2;
-	sd_config.max_clk_rate  = MMC_CLK_200MHZ;
+	sd_config.max_clk_rate = MMC_CLK_200MHZ;
 	sd_config.sdhc_base     = mmc_sdhci_base[sd_config.slot - 1];
 	sd_config.pwrctl_base   = mmc_sdc_base[sd_config.slot -1];
 	sd_config.pwr_irq       = 0;
@@ -377,7 +377,7 @@ void target_init()
 	 * Set drive strength & pull ctrl for
 	 * emmc
 	 */
-	set_sdc_power_ctrl(1); // 1 is for represent the emmc
+	//set_sdc_power_ctrl(1); // 1 is for represent the emmc
 
 #if MMC_SDHCI_SUPPORT
 	target_mmc_sdhci_init();
